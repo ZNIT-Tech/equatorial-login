@@ -49,13 +49,15 @@ def salvar_sessao():
 
         result = supabase.table('credenciais_clientes').insert(insert_data).execute()
 
-        if result.get('status_code') == 201:
-            return jsonify({'mensagem': 'Sessão salva no Supabase!'})
+        # ✅ Verificação mais confiável
+        if result.data:
+            return jsonify({'mensagem': 'Sessão salva no Supabase!', 'dados': result.data}), 200
         else:
-            return jsonify({'erro': 'Erro ao salvar no Supabase', 'detalhes': result}), 500
+            return jsonify({'erro': 'Erro ao salvar no Supabase', 'detalhes': str(result)}), 500
 
     except Exception as e:
         return jsonify({'erro': str(e)}), 500
+
 
 @app.route("/check", methods=["GET"])
 def check():
