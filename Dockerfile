@@ -11,7 +11,7 @@ COPY . .
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # Expõe a porta usada pelo Flask
-EXPOSE 5000
+EXPOSE 5001
 
 # Comando para rodar o app
 CMD ["python", "wsgi.py"]

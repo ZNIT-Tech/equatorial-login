@@ -5,7 +5,7 @@ services:
     build: .
     container_name: flask_sessao
     ports:
-      - "5000:5000"
+      - "5001:5001"
     environment:
       - SUPABASE_URL=https://xyuqhpgjbrattreuvfzy.supabase.co
       - SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh5dXFocGdqYnJhdHRyZXV2Znp5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyOTAyOTA5OCwiZXhwIjoyMDQ0NjA1MDk4fQ.08ZnTMYVK2aVgipnoYTYnP-jCUAL7xigLzwLBpikf4E
